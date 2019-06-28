@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'appTwo/base.html' %}
+  {% block body_block %}
+
+  <div class="container text-center">
+    <div class="jumbotron">
+      <h1><em>USER Form...</em></h1>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container text-center">
+
+    {% if registered or user.is_authenticated %}
+      <h2>Thank You For Registeration !!</h2>
+
+    {% else %}
+    <form enctype="multipart/form-data" method="post">
+      {{ userF.as_p }}
+      {{ profileForm.as_p }}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-warning" value="SUBMIT">
+    </form>
+    {% endif %}
+  </div>
+
+
+
+  {% endblock %}

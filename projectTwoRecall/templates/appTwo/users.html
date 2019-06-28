@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'appTwo/base.html' %}
+  {% block body_block %}
+
+  {% load staticfiles %}
+
+  <link rel="stylesheet" href="{% static "stylesheet/userStyle.css" %}">
+
+  <h1><em>User's Data...</em></h1>
+  <hr>
+
+  <div class="list">
+    {% if userData %}
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Comment</th>
+      </thead>
+      {% for i in userData %}
+      <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.comment }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {%else%}
+    <h3>DATA NOT FOUND</h3>
+    {% endif %}
+  </div>
+
+  {% endblock %}

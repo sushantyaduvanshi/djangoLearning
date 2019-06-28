@@ -1,0 +1,20 @@
+
+h1,.list{
+  display: flex;
+  justify-content: center;
+}
+th,td{
+  padding: 13px;
+  text-align: center;
+}
+th{
+  border: 2px solid black;
+}
+td{
+  border: 2px dotted black;
+}
+link{
+  position: absolute;
+  float: left;
+  top: 30%;
+}
